@@ -578,7 +578,12 @@ public final class Launcher extends Activity
                     if (mFirstTime) {
                         mFirstTime = false;
                     } else {
-                        workspace.post(mBuildLayersRunnable);
+                        // We delay the layer building a bit in order to give
+                        // other message processing a time to run.  In particular
+                        // this avoids a delay in hiding the IME if it was
+                        // currently shown, because doing that may involve
+                        // some communication back with the app.
+                        workspace.postDelayed(mBuildLayersRunnable, 500);
                         observer.removeOnPreDrawListener(this);
                     }
                     return true;
@@ -2531,14 +2536,16 @@ public final class Launcher extends Activity
     /**
      * Shows the hotseat area.
      */
-    void showHotseat(boolean animated) {
-        if (!LauncherApplication.isScreenLarge()) {
-            if (animated) {
-                int duration = mSearchDropTargetBar.getTransitionInDuration();
-                mHotseat.animate().alpha(1f).setDuration(duration);
-            } else {
-                mHotseat.setAlpha(1f);
-            }
+    void showHotseat(boolean animated) {    	
+        if (!LauncherApplication.isScreenLarge()) {        
+        	if( mHotseat != null ) {
+        		if (animated) {
+                	int duration = mSearchDropTargetBar.getTransitionInDuration();
+                	mHotseat.animate().alpha(1f).setDuration(duration);
+            	} else {
+                	mHotseat.setAlpha(1f);
+            	}
+        	}
         }
     }
 
@@ -2547,12 +2554,14 @@ public final class Launcher extends Activity
      */
     void hideHotseat(boolean animated) {
         if (!LauncherApplication.isScreenLarge()) {
-            if (animated) {
-                int duration = mSearchDropTargetBar.getTransitionOutDuration();
-                mHotseat.animate().alpha(0f).setDuration(duration);
-            } else {
-                mHotseat.setAlpha(0f);
-            }
+        	if( mHotseat != null ) {
+        		if (animated) {
+                	int duration = mSearchDropTargetBar.getTransitionOutDuration();
+                	mHotseat.animate().alpha(0f).setDuration(duration);
+            	} else {
+                	mHotseat.setAlpha(0f);
+            	}        	
+        	}
         }
     }
 

@@ -65,7 +65,10 @@ public class IconCache {
             }
         } else {
             mIconDpi = context.getResources().getDisplayMetrics().densityDpi;
+            if( density == DisplayMetrics.DENSITY_MEDIUM )
+            	mIconDpi = DisplayMetrics.DENSITY_HIGH;
         }
+        
         // need to set mIconDpi before getting default icon
         mDefaultIcon = makeDefaultIcon();
     }
