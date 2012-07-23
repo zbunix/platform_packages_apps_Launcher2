@@ -30,9 +30,9 @@
     <dimen name="scroll_zone">100dip</dimen>
 
     <dimen name="apps_customize_pageLayoutWidthGap">18dp</dimen>
-    <dimen name="apps_customize_pageLayoutHeightGap">8dp</dimen>
-    <dimen name="apps_customize_pageLayoutPaddingTop">20dp</dimen>
-    <dimen name="apps_customize_pageLayoutPaddingBottom">14dp</dimen>
+    <dimen name="apps_customize_pageLayoutHeightGap">28dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingTop">16dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingBottom">8dp</dimen>
     <dimen name="apps_customize_pageLayoutPaddingLeft">40dp</dimen>
     <dimen name="apps_customize_pageLayoutPaddingRight">40dp</dimen>
     <integer name="apps_customize_widget_cell_count_x">3</integer>
@@ -42,6 +42,6 @@
 
 <!-- Cling -->
     <!-- The offset for the text in the cling -->
-    <dimen name="cling_text_block_offset_x">110dp</dimen>
-    <dimen name="cling_text_block_offset_y">110dp</dimen>
+    <dimen name="cling_text_block_offset_x">140dp</dimen>
+    <dimen name="cling_text_block_offset_y">80dp</dimen>
 </resources>

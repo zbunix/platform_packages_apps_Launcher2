@@ -149,8 +149,8 @@ public class Workspace extends SmoothPagedView
     private SpringLoadedDragController mSpringLoadedDragController;
     private float mSpringLoadedShrinkFactor;
 
-    private static final int DEFAULT_CELL_COUNT_X = 4;
-    private static final int DEFAULT_CELL_COUNT_Y = 4;
+    private static final int DEFAULT_CELL_COUNT_X = 4;		//4
+    private static final int DEFAULT_CELL_COUNT_Y = 3;		//4
 
     // State variable that indicates whether the pages are small (ie when you're
     // in all apps or customize mode)

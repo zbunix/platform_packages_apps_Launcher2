@@ -27,6 +27,7 @@ import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 
 import java.util.HashMap;
+import android.util.Log;
 
 /**
  * Cache of application icons.  Icons can be made from any thread.
@@ -66,6 +67,8 @@ public class IconCache {
         } else {
             mIconDpi = context.getResources().getDisplayMetrics().densityDpi;
             if( density == DisplayMetrics.DENSITY_MEDIUM )
+            	mIconDpi = DisplayMetrics.DENSITY_HIGH;
+            if( density == DisplayMetrics.DENSITY_LOW)
             	mIconDpi = DisplayMetrics.DENSITY_HIGH;
         }
         
