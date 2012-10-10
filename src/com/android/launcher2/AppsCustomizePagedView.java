@@ -48,6 +48,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Process;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -464,6 +465,10 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
 
         // Now that the data is ready, we can calculate the content width, the number of cells to
         // use for each page
+        if("true".equals(Build.TABLETUI)){
+			maxCellCountX = 7;
+			maxCellCountY = 7;
+		}
         mWidgetSpacingLayout.setGap(mPageLayoutWidthGap, mPageLayoutHeightGap);
         mWidgetSpacingLayout.setPadding(mPageLayoutPaddingLeft, mPageLayoutPaddingTop,
                 mPageLayoutPaddingRight, mPageLayoutPaddingBottom);
